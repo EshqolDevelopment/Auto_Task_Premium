@@ -651,7 +651,9 @@ class RegisterScreen(MDApp):
         else:
             return False
 
-    def sendEmail(self):
+    def 
+    
+    Email(self):
         if self.check_internet():
             if self.check_email_laws(userEmail):
                 try:
@@ -863,7 +865,7 @@ class RegisterScreen(MDApp):
                         to_emails=userEmail,
                         subject='AutoTasks | Your Verification Code',
                         html_content=s1)
-                    sg = SendGridAPIClient('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')
+                    sg = SendGridAPIClient(env["sendgrid_api_key"])
                     sg.send(message)
 
                     RegisterScreen.get_running_app().stop()
